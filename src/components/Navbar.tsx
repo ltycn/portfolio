@@ -54,9 +54,11 @@ const Navbar = () => {
                 {isActive && (
                   <motion.div
                     layoutId="nav-glow-slider"
-                    className="absolute -top-3 -bottom-1 left-0 right-0 bg-white/10 rounded-t-md rounded-b-sm shadow-[0_0_15px_rgba(255,255,255,0.4)] z-[-1]"
+                    className="absolute inset-0 bg-white/10 rounded-full z-[-1]"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                  />
+                  >
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-full shadow-[0_-2px_15px_8px_rgba(255,255,255,0.4)]" />
+                  </motion.div>
                 )}
                 <span className="relative z-10">{t(item.nameKey)}</span>
               </NavLink>
