@@ -57,7 +57,7 @@ const Hero = () => {
 
             {/* First "e" + rotating part */}
             <motion.div layout className="flex items-baseline">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700 pr-2 -mr-2 pb-2 -mb-2">
                 e
               </span>
               <motion.div
@@ -84,7 +84,7 @@ const Hero = () => {
 
             {/* Second "e" + rotating part */}
             <motion.div layout className="flex items-baseline">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700 pr-2 -mr-2 pb-2 -mb-2">
                 e
               </span>
               <motion.div
