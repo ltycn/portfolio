@@ -39,7 +39,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="hidden md:flex items-center glass rounded-full px-2 py-1.5"
+          className="hidden md:flex items-center glass rounded-full px-2 py-1.5 relative"
         >
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -47,14 +47,14 @@ const Navbar = () => {
               <NavLink
                 key={item.path}
                 to={item.path}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all relative ${
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all relative z-10 ${
                   isActive ? 'text-white' : 'text-white/50 hover:text-white/80'
                 }`}
               >
                 {isActive && (
                   <motion.div
-                    layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/10 rounded-full"
+                    layoutId="nav-glow-slider"
+                    className="absolute inset-0 bg-white/10 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.4)] z-[-1]"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
