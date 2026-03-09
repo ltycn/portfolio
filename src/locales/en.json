@@ -8,9 +8,6 @@
     "resume": "Resume"
   },
   "hero": {
-    "title1": "Turning business ideas",
-    "title2": "into scalable",
-    "title3": "digital products",
     "greeting": "Hey there! I'm Alex Chen 👋",
     "role": "a Full-Stack Software Engineer",
     "description1": "Engineering high-performance, accessible, and scalable products",
@@ -24,9 +21,6 @@
     }
   },
   "projects": {
-    "subtitle": "Featured Case Studies",
-    "title1": "Curated",
-    "title2": "work",
     "featured": "Featured",
     "cloudDrive": {
       "title": "Cloud Drive",
@@ -156,20 +150,6 @@
     "connectDesc": "If you're interested in discussing potential opportunities or have any inquiries, I'd love to hear from you. Feel free to reach out via email at",
     "connectOr": "or connect with me on",
     "cvDetails": "Find more details around my background on the web version of my CV at"
-  },
-  "snippets": {
-    "title1": "Code",
-    "title2": "Snippets",
-    "subtitle": "Code Bits & Bytes",
-    "desc": "Explore my collection of practical code snippets for quick integration into your projects.",
-    "debounce": {
-      "title": "Debounce in JavaScript",
-      "desc": "Create a simple reusable JavaScript function to debounce user input events."
-    },
-    "sitemap": {
-      "title": "Generate Sitemap in Next JS",
-      "desc": "A sitemap is essentially a roadmap for search engines, guiding them through the intricate web of your website."
-    }
   },
   "footer": {
     "message": "It was great having you here, my inbox is always open whether you have a question, a project in mind, or just want to say hi!",
