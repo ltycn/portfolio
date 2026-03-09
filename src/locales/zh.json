@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "skills": "技能",
+    "about": "关于"
+  },
+  "hero": {
+    "title1": "将商业创意",
+    "title2": "转化为可扩展的",
+    "title3": "数字产品",
+    "greeting": "你好！我是 Alex Chen 👋",
+    "role": "一名前端/全栈工程师",
+    "description1": "为 Web 和移动生态系统",
+    "description2": "构建高性能、无障碍和可扩展的产品。",
+    "viewProjects": "查看项目",
+    "getInTouch": "联系我",
+    "features": {
+      "performance": "性能优先",
+      "accessible": "无障碍设计",
+      "scalable": "可扩展架构"
+    }
+  },
+  "projects": {
+    "subtitle": "精选案例",
+    "title1": "精选",
+    "title2": "作品",
+    "featured": "特色",
+    "cloudDrive": {
+      "title": "Cloud Drive (云盘)",
+      "description": "专为现代团队设计的综合云存储平台，具有实时同步、精细化的共享控制和极速上传功能。"
+    },
+    "messengerPro": {
+      "title": "Messenger Pro (通讯工具)",
+      "description": "一款现代实时消息传递应用程序，专为速度和可靠性而构建，具有输入状态提示、已读回执和无缝的群组对话。"
+    },
+    "features": {
+      "search": "具有智能过滤器的高级搜索功能",
+      "sync": "实时同步引擎",
+      "security": "企业级安全实现"
+    }
+  },
+  "skills": {
+    "subtitle": "核心优势",
+    "title1": "能力",
+    "title2": "技能"
+  },
+  "about": {
+    "subtitle": "关于我",
+    "title1": "略懂",
+    "title2": "一切的软件工程师",
+    "intro": "<0>我是 Alex Chen</0> — 一位充满热情的软件工程师，热衷于构建引人入胜且高效的 Web 应用程序。我的技术栈主要基于 JavaScript 生态系统和 Python。",
+    "p1": "当我不写代码时，我喜欢探索新想法并满足我的好奇心。我相信平衡，并享受拥抱生活的方方面面。",
+    "p2": "我相信每一天都是成长、创造和有所作为的新机会！每个项目都是创造有意义事物的机会。",
+    "workExperience": "工作经验"
+  },
+  "footer": {
+    "message": "很高兴你来到这里，无论你是遇到问题、有一个项目想法，还是只是想打个招呼，我的收件箱始终开放！",
+    "available": "可接项目",
+    "general": "通用",
+    "social": "社交",
+    "snippets": "代码片段",
+    "twitter": "推特",
+    "linkedin": "领英",
+    "github": "Github",
+    "instagram": "Instagram",
+    "copyright": "© 2025 Alex Chen - 软件工程师",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}
