@@ -36,11 +36,33 @@
       "title": "Messenger Pro",
       "description": "A modern real-time messaging application built for speed and reliability, featuring typing indicators, read receipts, and seamless group conversations."
     },
+    "ats": {
+      "title": "ATS Suite",
+      "description": "Applicant Tracking System seamlessly integrating Careers, HR, and Employee workflows."
+    },
+    "projectsTeam": {
+      "title": "Projects and Team",
+      "description": "Project management tool to streamline workflows and task management."
+    },
+    "jwtAuth": {
+      "title": "JWT Authentication",
+      "description": "A powerful template and intuitive authentication tool based on RSA key-pair algorithm."
+    },
+    "nextBoilerplate": {
+      "title": "Next Boilerplate",
+      "description": "Accelerate projects with pre-configured components and utilities."
+    },
     "features": {
       "search": "Advanced search functionality with intelligent filters",
       "sync": "Real-time synchronization engine",
       "security": "Enterprise-grade security implementation"
-    }
+    },
+    "heroSubtitle": "Featured Projects",
+    "heroTitle1": "Curated",
+    "heroTitle2": "work",
+    "heroDesc": "I've worked on tons of projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code.",
+    "repositoriesTitle": "THE REPOSITORIES",
+    "repositoriesDesc": "List of Honorable Projects on Github"
   },
   "skills": {
     "subtitle": "Core Strengths",
@@ -48,13 +70,104 @@
     "title2": "skills"
   },
   "about": {
-    "subtitle": "About Me",
-    "title1": "Software Engineer with a little bit of",
-    "title2": "everything",
-    "intro": "<0>I'm Alex Chen</0> — a driven Software Engineer with a passion for building engaging and efficient web applications. My toolkit is rooted in the JavaScript ecosystem and Python.",
-    "p1": "When I'm not deep in code, I love to explore new ideas and fulfill my curiosity. I believe in balance and enjoy embracing every aspect of life.",
-    "p2": "I believe each day is a fresh opportunity to grow, create, and make a difference! Every project is a chance to engineer something meaningful.",
-    "workExperience": "Work Experience"
+    "subtitle": "More About Me",
+    "title1": "I'm Alex, a",
+    "title2": "Software engineer",
+    "intro": "My name is Alex Chen. Engineer, Problem Solver, Tech Fanatic and a loving Human.",
+    "p1": "A Software Engineer passionate about creating beautiful products that empower people. I thrive on solving complex problems with clean, efficient code. My expertise spans JavaScript, Typescript, React.js, Node.js, Next.js, and Python.",
+    "p2": "I specialize in creating user-friendly interfaces, building RESTful APIs, implementing microservice architecture, and seamlessly integrating external services. My expertise lies in translating business requirements into technical solutions.",
+    "p3": "I can help bring your dream product to life in the virtual world, whether it's crafting sleek websites for businesses or building your dream tech product. I believe in waking up each day eager to make a difference!",
+    "workExperience": "Work Experience",
+    "resume": "Resume",
+    "theExperience": "The Experience",
+    "experienceDesc": "Experience That Brings Ideas to Life",
+    "experienceSub": "Years of experience in software development, excelling in innovative solutions and optimizing user experiences.",
+    "experience": {
+      "company1": "Tech Innovations Inc.",
+      "role1": "Full Stack Engineer",
+      "date1": "Nov 2022 - Present",
+      "location1": "Remote",
+      "type1": "Full-time",
+      "bullet1_1": "Redesigned the company's client dashboard from an outdated layout to a modern, customizable interface, reduced page load time.",
+      "bullet1_2": "Engineered an AI-powered automation system, generating clustered reports and reducing manual processing time.",
+      "bullet1_3": "Optimized database pipelines and indexes to enhance system performance and query latency.",
+      "company2": "Creative Solutions",
+      "role2": "Frontend Developer",
+      "date2": "Jan 2021 - Oct 2022",
+      "location2": "New York, USA",
+      "type2": "Freelance",
+      "bullet2_1": "Architected enterprise-level products including cloud-based file storage and real-time project management.",
+      "bullet2_2": "Migrated legacy interfaces built with HTML/CSS/PHP to React and Express using micro-frontend architecture.",
+      "bullet2_3": "Resolved critical software bugs and improved system performance."
+    }
+  },
+  "hire": {
+    "title1": "Hire",
+    "title2": "Me",
+    "subtitle": "Hey there! Let's make software and solve problems together.",
+    "intro": "I'm all about making technology work for you and cracking complex problems. Picture me as your go-to software superhero, ready to tackle challenges head-on and transform them into clever solutions.",
+    "intro2": "I'm not just a coder; I'm here to enhance, speed up, and amplify your projects. When you bring me on board, you're partnering with someone who's devoted to making everything run smoothly and efficiently.",
+    "customSoftware": {
+      "title": "Custom software development",
+      "desc": "From ground-up creation to revamping existing projects, I bring expertise across languages and frameworks to shape your software solution."
+    },
+    "processEnhancement": {
+      "title": "Development process enhancement",
+      "desc": "Elevate your software workflow with modern CI/CD, Git practices, GitHub Actions, and IaC. Streamlining manual processes is my expertise."
+    },
+    "codeReview": {
+      "title": "Code review",
+      "desc": "From code quality tools to encapsulation and beyond, I conduct comprehensive code reviews and offer improvements for maintainability."
+    },
+    "fullStack": {
+      "title": "Full Stack development",
+      "desc": "I've worked across a wide spectrum of technologies and platforms: backend, frontend, microservices, and cloud native development."
+    },
+    "designSystem": {
+      "title": "Design system development",
+      "desc": "Building upon existing tools or crafting custom design systems, I bring substantial experience in component libraries with React."
+    },
+    "lookForTitle": "What I am looking for in a position",
+    "remoteFirst": {
+      "title": "Remote first/remote friendly",
+      "desc": "I work remotely and I look for remote first or remote friendly positions. I'm happy to work in most timezones."
+    },
+    "asyncComm": {
+      "title": "Asynchronous communication",
+      "desc": "Asynchronous communication empowers teams with autonomy for more flexibility and convenience, leading to better documentation and collaboration."
+    },
+    "fewerMeetings": {
+      "title": "Fewer meetings",
+      "desc": "Fewer meetings contribute to the effectiveness and autonomy of remote teams, allowing more time for deep work."
+    },
+    "positiveCulture": {
+      "title": "Positive, people first, empathetic culture",
+      "desc": "A positive company culture is friendly, collaborative, and empathetic, promoting open communication and teamwork."
+    },
+    "dataDecisions": {
+      "title": "Decisions based on data",
+      "desc": "I believe that decisions should be made based on data and customer feedback, avoiding the sunk cost fallacy."
+    },
+    "workLifeBalance": {
+      "title": "Work-life balance",
+      "desc": "We are all human and have lives outside of work. I believe that work-life balance is important to prevent burnout."
+    },
+    "connect": "Let's Connect",
+    "connectDesc": "If you're interested in discussing potential opportunities, I'd love to hear from you. Feel free to reach out via email."
+  },
+  "snippets": {
+    "title1": "Code",
+    "title2": "Snippets",
+    "subtitle": "Code Bits & Bytes",
+    "desc": "Explore my collection of practical code snippets for quick integration into your projects.",
+    "debounce": {
+      "title": "Debounce in JavaScript",
+      "desc": "Create a simple reusable JavaScript function to debounce user input events."
+    },
+    "sitemap": {
+      "title": "Generate Sitemap in Next JS",
+      "desc": "A sitemap is essentially a roadmap for search engines, guiding them through the intricate web of your website."
+    }
   },
   "footer": {
     "message": "It was great having you here, my inbox is always open whether you have a question, a project in mind, or just want to say hi!",
