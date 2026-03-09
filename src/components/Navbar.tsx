@@ -54,7 +54,7 @@ const Navbar = () => {
                 {isActive && (
                   <motion.div
                     layoutId="nav-glow-slider"
-                    className="absolute inset-0 bg-white/10 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.4)] z-[-1]"
+                    className="absolute -top-3 -bottom-1 left-0 right-0 bg-white/10 rounded-t-md rounded-b-sm shadow-[0_0_15px_rgba(255,255,255,0.4)] z-[-1]"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}

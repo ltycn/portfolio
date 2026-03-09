@@ -20,11 +20,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Blobs */}
-      <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-radial-cyan opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] bg-radial-pink opacity-30 pointer-events-none" />
-
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
