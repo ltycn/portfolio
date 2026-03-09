@@ -2,10 +2,27 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { ExternalLink, Github } from 'lucide-react';
-import { projects, repositories } from '../data';
+
+interface FeaturedProject {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+}
+
+interface RepositoryProject {
+  title: string;
+  description: string;
+  tech: string;
+  url: string;
+}
 
 const ProjectsComponent = () => {
   const { t } = useTranslation();
+
+  const featuredList = t('projects.featuredList', { returnObjects: true }) as FeaturedProject[];
+  const repositoriesList = t('projects.repositoriesList', { returnObjects: true }) as RepositoryProject[];
 
   return (
     <div className="py-20 max-w-7xl mx-auto px-6">
@@ -25,9 +42,9 @@ const ProjectsComponent = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-12 mb-32">
-        {projects.map((project, index) => (
+        {featuredList.map((project, index) => (
           <motion.div
-            key={project.titleKey}
+            key={project.id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -37,7 +54,7 @@ const ProjectsComponent = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 rounded-3xl z-10" />
             <img
               src={project.image}
-              alt={t(project.titleKey)}
+              alt={project.title}
               className="w-full aspect-[4/3] object-cover rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-700"
             />
 
@@ -49,7 +66,7 @@ const ProjectsComponent = () => {
                       {t('projects.featured')}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">{t(project.titleKey)}</h3>
+                  <h3 className="text-3xl font-bold text-white mb-2">{project.title}</h3>
                 </div>
                 <button className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 transform group-hover:-translate-y-2 group-hover:translate-x-2">
                   <ExternalLink size={20} />
@@ -57,7 +74,7 @@ const ProjectsComponent = () => {
               </div>
 
               <p className="text-white/70 mb-6 line-clamp-2">
-                {t(project.descriptionKey)}
+                {project.description}
               </p>
 
               <div className="flex gap-3">
@@ -84,7 +101,7 @@ const ProjectsComponent = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {repositories.map((repo, idx) => (
+          {repositoriesList.map((repo, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -99,8 +116,8 @@ const ProjectsComponent = () => {
                 </a>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-4 pr-8">{t(repo.titleKey)}</h3>
-              <p className="text-white/60 mb-8 min-h-[4rem]">{t(repo.descriptionKey)}</p>
+              <h3 className="text-2xl font-bold text-white mb-4 pr-8">{repo.title}</h3>
+              <p className="text-white/60 mb-8 min-h-[4rem]">{repo.description}</p>
 
               <div className="flex items-center gap-2 border-t border-white/10 pt-6">
                 <span className="text-sm font-medium px-3 py-1 bg-white/10 rounded-full text-white/80">

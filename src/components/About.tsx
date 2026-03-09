@@ -2,10 +2,22 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
-import { workExperience } from '../data';
+
+interface ExperienceItem {
+  company: string;
+  role: string;
+  date: string;
+  location: string;
+  type: string;
+  bullets: string[];
+  tech: string[];
+}
 
 const About = () => {
   const { t } = useTranslation();
+
+  const paragraphs = t('about.paragraphs', { returnObjects: true }) as string[];
+  const experienceList = t('about.experienceList', { returnObjects: true }) as ExperienceItem[];
 
   return (
     <div className="min-h-screen pt-32 px-6 max-w-7xl mx-auto mb-20">
@@ -32,9 +44,9 @@ const About = () => {
           <p className="font-medium text-white text-xl">
             {t('about.intro')}
           </p>
-          <p>{t('about.p1')}</p>
-          <p>{t('about.p2')}</p>
-          <p>{t('about.p3')}</p>
+          {paragraphs.map((p, index) => (
+            <p key={index}>{p}</p>
+          ))}
 
           <div className="pt-8 flex gap-4">
             <button className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-white/90 transition-colors">
@@ -57,7 +69,7 @@ const About = () => {
           </div>
 
           <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
-            {workExperience.map((job, index) => (
+            {experienceList.map((job, index) => (
               <div key={index} className="relative flex items-start group is-active pl-12">
                 <div className="absolute left-0 translate-x-[4px] flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-black text-white shadow">
                   <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
@@ -65,18 +77,18 @@ const About = () => {
 
                 <div className="w-full">
                   <div className="flex flex-col mb-4">
-                    <span className="text-white/50 text-sm font-semibold tracking-wide mb-2">{t(job.dateKey)}</span>
-                    <h4 className="text-2xl font-bold text-white mb-1">{t(job.companyKey)}</h4>
+                    <span className="text-white/50 text-sm font-semibold tracking-wide mb-2">{job.date}</span>
+                    <h4 className="text-2xl font-bold text-white mb-1">{job.company}</h4>
                     <div className="text-white/60 text-sm mb-4">
-                      {t(job.locationKey)} • {t(job.typeKey)}
+                      {job.location} • {job.type}
                     </div>
-                    <span className="text-white font-medium mb-4">{t(job.roleKey)}</span>
+                    <span className="text-white font-medium mb-4">{job.role}</span>
                   </div>
                   <ul className="text-white/70 space-y-4 text-sm mb-6">
                     {job.bullets.map((bullet, i) => (
                       <li key={i} className="flex gap-3">
                         <span className="text-white/40 mt-1">▹</span>
-                        <span className="leading-relaxed">{t(bullet)}</span>
+                        <span className="leading-relaxed">{bullet}</span>
                       </li>
                     ))}
                   </ul>
