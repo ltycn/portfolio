@@ -1,8 +1,17 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Sparkles, Globe, Layers } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { coreSkills } from '../data';
+
+const POSSIBILITIES = [
+  { part1: 'fficiency', part2: 'ngineer' },
+  { part1: 'xperiment', part2: 'ngineer' },
+  { part1: 'nablement', part2: 'ngineer' },
+  { part1: 'xplore', part2: 'verything' },
+  { part1: 'ver', part2: 'volving' },
+  { part1: 'verything', part2: 'ngineered' },
+];
 
 const iconMap: Record<string, React.ElementType> = {
   Sparkles,
@@ -12,6 +21,14 @@ const iconMap: Record<string, React.ElementType> = {
 
 const Hero = () => {
   const { t } = useTranslation();
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % POSSIBILITIES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const features = [
     { key: 'hero.features.performance', icon: 'Sparkles', color: 'text-cyan-400' },
@@ -20,21 +37,75 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Blobs */}
-      <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-radial-cyan opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] bg-radial-pink opacity-30 pointer-events-none" />
-
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-6">
-            {t('hero.title1')} <br />
-            {t('hero.title2')} <span className="text-gradient italic">{t('hero.title3')}</span>
-          </h2>
+          {/* Animated terry.ee Title */}
+          <motion.div
+            layout
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap justify-center items-baseline text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.2] py-4 mb-6"
+          >
+            {/* Fixed "terry." */}
+            <motion.span layout className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+              terry.
+            </motion.span>
+
+            {/* First "e" + rotating part */}
+            <motion.div layout className="flex items-baseline">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700 pr-2 -mr-2 pb-2 -mb-2">
+                e
+              </span>
+              <motion.div
+                layout
+                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline"
+              >
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={`part1-${index}`}
+                    initial={{ y: '100%', opacity: 0, scale: 0.95 }}
+                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                    exit={{ y: '-100%', opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700"
+                  >
+                    {POSSIBILITIES[index].part1}
+                  </motion.span>
+                </AnimatePresence>
+              </motion.div>
+            </motion.div>
+
+            {/* Space */}
+            <motion.span layout className="w-[0.2em]" />
+
+            {/* Second "e" + rotating part */}
+            <motion.div layout className="flex items-baseline">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 transition-all duration-700 pr-2 -mr-2 pb-2 -mb-2">
+                e
+              </span>
+              <motion.div
+                layout
+                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline"
+              >
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={`part2-${index}`}
+                    initial={{ y: '100%', opacity: 0, scale: 0.95 }}
+                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                    exit={{ y: '-100%', opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700"
+                  >
+                    {POSSIBILITIES[index].part2}
+                  </motion.span>
+                </AnimatePresence>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           <p className="text-lg md:text-xl text-white/60 font-medium mb-4">
             {t('hero.greeting')} <br className="md:hidden" /> {t('hero.role')}

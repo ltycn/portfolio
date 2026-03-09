@@ -1,105 +1,119 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { ExternalLink, Code2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { projects } from '../data';
+import { motion } from 'motion/react';
+import { ExternalLink, Github } from 'lucide-react';
+import { projects, repositories } from '../data';
 
-interface ProjectCardProps {
-  key?: string;
-  titleKey: string;
-  descriptionKey: string;
-  image: string;
-  tech: string[];
-  featuresKeys: string[];
-  reverse?: boolean;
-}
-
-const ProjectCard = ({ titleKey, descriptionKey, image, tech, featuresKeys, reverse = false }: ProjectCardProps) => {
+const ProjectsComponent = () => {
   const { t } = useTranslation();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 mb-20 group`}
-    >
-      <div className="lg:w-1/3 aspect-square rounded-3xl overflow-hidden glass relative">
-        <img
-          src={image}
-          alt={t(titleKey)}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-          <button className="glass p-3 rounded-full">
-            <ExternalLink size={24} />
-          </button>
-        </div>
+    <div className="py-20 max-w-7xl mx-auto px-6">
+      <div className="text-center mb-20">
+        <span className="text-sm font-bold uppercase tracking-widest text-white/50 mb-4 block">
+          {t('projects.heroSubtitle')}
+        </span>
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
+          {t('projects.heroTitle1')}{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-500">
+            {t('projects.heroTitle2')}
+          </span>
+        </h2>
+        <p className="max-w-2xl mx-auto text-white/60 text-lg leading-relaxed">
+          {t('projects.heroDesc')}
+        </p>
       </div>
 
-      <div className="lg:w-2/3 glass rounded-3xl p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
-        {/* Decorative background gradient */}
-        <div className={`absolute inset-0 opacity-10 pointer-events-none bg-gradient-to-br ${reverse ? 'from-cyan-500' : 'from-purple-500'} to-transparent`} />
+      <div className="grid md:grid-cols-2 gap-12 mb-32">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.titleKey}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="group relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 rounded-3xl z-10" />
+            <img
+              src={project.image}
+              alt={t(project.titleKey)}
+              className="w-full aspect-[4/3] object-cover rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
 
-        <div className="relative z-10">
-          <div className="flex flex-wrap items-center gap-4 mb-4">
-            <h3 className="text-3xl md:text-4xl font-bold">{t(titleKey)}</h3>
-            <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-[10px] uppercase font-bold tracking-widest">{t('projects.featured')}</span>
-          </div>
-
-          <p className="text-white/60 text-lg mb-8 leading-relaxed">
-            {t(descriptionKey)}
-          </p>
-
-          <ul className="space-y-3 mb-8">
-            {featuresKeys.map((featureKey, i) => (
-              <li key={i} className="flex items-start gap-3 text-white/50 text-sm">
-                <div className="mt-1 text-cyan-400">
-                  <Code2 size={16} />
+            <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+              <div className="flex justify-between items-end mb-4">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-white/10 backdrop-blur-md rounded-full text-white">
+                      {t('projects.featured')}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-2">{t(project.titleKey)}</h3>
                 </div>
-                {t(featureKey)}
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex flex-wrap gap-2">
-            {tech.map((t_tech) => (
-              <div key={t_tech} className="flex items-center gap-2 glass px-3 py-1.5 rounded-lg text-xs font-medium">
-                <div className="w-4 h-4 bg-white/10 rounded-sm" />
-                {t_tech}
+                <button className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 transform group-hover:-translate-y-2 group-hover:translate-x-2">
+                  <ExternalLink size={20} />
+                </button>
               </div>
-            ))}
-          </div>
+
+              <p className="text-white/70 mb-6 line-clamp-2">
+                {t(project.descriptionKey)}
+              </p>
+
+              <div className="flex gap-3">
+                {project.tech.map(tech => (
+                  <span key={tech} className="px-3 py-1 text-sm bg-black/50 backdrop-blur-md rounded-full border border-white/10 text-white/80">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* The Repositories Section */}
+      <div className="mt-20">
+        <div className="text-center mb-16">
+          <span className="text-sm font-bold uppercase tracking-widest text-white/50 mb-4 block">
+            {t('projects.repositoriesTitle')}
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
+            {t('projects.repositoriesDesc')}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {repositories.map((repo, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative group"
+            >
+              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <a href={repo.url} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white">
+                  <ExternalLink size={20} />
+                </a>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4 pr-8">{t(repo.titleKey)}</h3>
+              <p className="text-white/60 mb-8 min-h-[4rem]">{t(repo.descriptionKey)}</p>
+
+              <div className="flex items-center gap-2 border-t border-white/10 pt-6">
+                <span className="text-sm font-medium px-3 py-1 bg-white/10 rounded-full text-white/80">
+                  {repo.tech}
+                </span>
+                <Github size={16} className="text-white/40 ml-auto" />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-const Projects = () => {
-  const { t } = useTranslation();
-
-  return (
-    <section id="projects" className="py-20 max-w-7xl mx-auto px-6">
-      <div className="text-center mb-16">
-        <h6 className="text-sm font-bold tracking-[0.2em] text-white/40 uppercase mb-4">{t('projects.subtitle')}</h6>
-        <h2 className="text-5xl md:text-6xl font-bold">{t('projects.title1')} <span className="text-gradient italic">{t('projects.title2')}</span></h2>
-      </div>
-
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={project.titleKey}
-          titleKey={project.titleKey}
-          descriptionKey={project.descriptionKey}
-          image={project.image}
-          tech={project.tech}
-          featuresKeys={project.featuresKeys}
-          reverse={index % 2 !== 0}
-        />
-      ))}
-    </section>
-  );
-};
-
-export default Projects;
+export default ProjectsComponent;
