@@ -3,7 +3,9 @@
     "home": "Home",
     "projects": "Projects",
     "skills": "Skills",
-    "about": "About"
+    "about": "About",
+    "hireMe": "Hire Me",
+    "snippets": "Snippets"
   },
   "hero": {
     "title1": "Turning business ideas",
@@ -58,6 +60,7 @@
     "message": "It was great having you here, my inbox is always open whether you have a question, a project in mind, or just want to say hi!",
     "available": "Available for work",
     "general": "General",
+    "specifics": "Specifics",
     "social": "Social",
     "snippets": "Snippets",
     "twitter": "Twitter",

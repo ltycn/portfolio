@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Menu, Github, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { NavLink, useLocation } from 'react-router-dom';
 import { navItems } from '../data';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +29,11 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold tracking-tighter cursor-pointer"
+          className="text-2xl font-bold tracking-tighter"
         >
-          PORTFOLIO<span className="text-orange-500">.</span>
+          <NavLink to="/">
+            PORTFOLIO<span className="text-orange-500">.</span>
+          </NavLink>
         </motion.div>
 
         <motion.div
@@ -38,27 +41,27 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="hidden md:flex items-center glass rounded-full px-2 py-1.5"
         >
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => {
-                setActiveSection(item.id);
-                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all relative ${
-                activeSection === item.id ? 'text-white' : 'text-white/50 hover:text-white/80'
-              }`}
-            >
-              {activeSection === item.id && (
-                <motion.div
-                  layoutId="nav-pill"
-                  className="absolute inset-0 bg-white/10 rounded-full"
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              {t(item.nameKey)}
-            </button>
-          ))}
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all relative ${
+                  isActive ? 'text-white' : 'text-white/50 hover:text-white/80'
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-white/10 rounded-full"
+                    transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10">{t(item.nameKey)}</span>
+              </NavLink>
+            );
+          })}
         </motion.div>
 
         <motion.div

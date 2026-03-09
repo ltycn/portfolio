@@ -1,8 +1,9 @@
 export const navItems = [
-  { nameKey: 'nav.home', id: 'home' },
-  { nameKey: 'nav.projects', id: 'projects' },
-  { nameKey: 'nav.skills', id: 'skills' },
-  { nameKey: 'nav.about', id: 'about' },
+  { nameKey: 'nav.home', path: '/' },
+  { nameKey: 'nav.about', path: '/about' },
+  { nameKey: 'nav.projects', path: '/projects' },
+  { nameKey: 'nav.hireMe', path: '/hire-me' },
+  { nameKey: 'nav.snippets', path: '/snippets' }
 ];
 
 export const coreSkills = [
@@ -47,15 +48,19 @@ export const skillsList = [
 
 export const footerLinks = {
   general: [
-    { nameKey: 'nav.home', id: 'home' },
-    { nameKey: 'nav.about', id: 'about' },
-    { nameKey: 'nav.projects', id: 'projects' },
-    { nameKey: 'footer.snippets', id: 'snippets' }
+    { nameKey: 'nav.home', path: '/' },
+    { nameKey: 'nav.about', path: '/about' },
+    { nameKey: 'nav.projects', path: '/projects' },
+    { nameKey: 'nav.snippets', path: '/snippets' }
+  ],
+  specifics: [
+    { nameKey: 'nav.hireMe', path: '/hire-me' },
+    { nameKey: 'footer.privacy', path: '/privacy-policy' },
   ],
   social: [
-    { nameKey: 'footer.twitter', id: 'twitter' },
-    { nameKey: 'footer.linkedin', id: 'linkedin' },
-    { nameKey: 'footer.github', id: 'github' },
-    { nameKey: 'footer.instagram', id: 'instagram' }
+    { nameKey: 'footer.twitter', path: '#' },
+    { nameKey: 'footer.linkedin', path: '#' },
+    { nameKey: 'footer.github', path: '#' },
+    { nameKey: 'footer.instagram', path: '#' }
   ]
 };

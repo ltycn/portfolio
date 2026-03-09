@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { footerLinks } from '../data';
 
 const Footer = () => {
@@ -24,7 +25,20 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">{t('footer.general')}</h4>
             <ul className="space-y-4 text-white/60">
               {footerLinks.general.map(item => (
-                <li key={item.id} className="hover:text-white transition-colors cursor-pointer">{t(item.nameKey)}</li>
+                <li key={item.path} className="hover:text-white transition-colors cursor-pointer">
+                  <Link to={item.path}>{t(item.nameKey)}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">{t('footer.specifics')}</h4>
+            <ul className="space-y-4 text-white/60">
+              {footerLinks.specifics.map(item => (
+                <li key={item.path} className="hover:text-white transition-colors cursor-pointer">
+                  <Link to={item.path}>{t(item.nameKey)}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -33,7 +47,9 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">{t('footer.social')}</h4>
             <ul className="space-y-4 text-white/60">
               {footerLinks.social.map(item => (
-                <li key={item.id} className="hover:text-white transition-colors cursor-pointer">{t(item.nameKey)}</li>
+                <li key={item.nameKey} className="hover:text-white transition-colors cursor-pointer">
+                  <a href={item.path}>{t(item.nameKey)}</a>
+                </li>
               ))}
             </ul>
           </div>

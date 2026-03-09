@@ -3,7 +3,9 @@
     "home": "首页",
     "projects": "项目",
     "skills": "技能",
-    "about": "关于"
+    "about": "关于",
+    "hireMe": "雇佣我",
+    "snippets": "代码片段"
   },
   "hero": {
     "title1": "将商业创意",
@@ -58,6 +60,7 @@
     "message": "很高兴你来到这里，无论你是遇到问题、有一个项目想法，还是只是想打个招呼，我的收件箱始终开放！",
     "available": "可接项目",
     "general": "通用",
+    "specifics": "具体",
     "social": "社交",
     "snippets": "代码片段",
     "twitter": "推特",
