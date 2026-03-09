@@ -69,6 +69,12 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-4"
         >
+          <NavLink
+            to="/resume"
+            className="hidden md:flex items-center gap-2 px-4 py-1.5 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 transition-colors"
+          >
+            {t('nav.resume')}
+          </NavLink>
           <button
             onClick={toggleLanguage}
             className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium glass rounded-full hover:bg-white/10 transition-colors"

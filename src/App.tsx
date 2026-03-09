@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import HireMe from './pages/HireMe';
-import Snippets from './pages/Snippets';
+import Resume from './pages/Resume';
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/hire-me" element={<HireMe />} />
-          <Route path="/snippets" element={<Snippets />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
         <Footer />
       </div>

@@ -2,8 +2,7 @@ export const navItems = [
   { nameKey: 'nav.home', path: '/' },
   { nameKey: 'nav.about', path: '/about' },
   { nameKey: 'nav.projects', path: '/projects' },
-  { nameKey: 'nav.hireMe', path: '/hire-me' },
-  { nameKey: 'nav.snippets', path: '/snippets' }
+  { nameKey: 'nav.hireMe', path: '/hire-me' }
 ];
 
 export const coreSkills = [
@@ -144,8 +143,7 @@ export const footerLinks = {
   general: [
     { nameKey: 'nav.home', path: '/' },
     { nameKey: 'nav.about', path: '/about' },
-    { nameKey: 'nav.projects', path: '/projects' },
-    { nameKey: 'nav.snippets', path: '/snippets' }
+    { nameKey: 'nav.projects', path: '/projects' }
   ],
   specifics: [
     { nameKey: 'nav.hireMe', path: '/hire-me' },
