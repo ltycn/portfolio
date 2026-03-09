@@ -20,23 +20,6 @@ export const skillsList = [
   'Python', 'ExpressJS', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker', 'Git'
 ];
 
-export const hireMePoints = [
-  { titleKey: 'hire.customSoftware.title', descKey: 'hire.customSoftware.desc', icon: '🧰' },
-  { titleKey: 'hire.processEnhancement.title', descKey: 'hire.processEnhancement.desc', icon: '⚙️' },
-  { titleKey: 'hire.codeReview.title', descKey: 'hire.codeReview.desc', icon: '🔍' },
-  { titleKey: 'hire.fullStack.title', descKey: 'hire.fullStack.desc', icon: '📚' },
-  { titleKey: 'hire.designSystem.title', descKey: 'hire.designSystem.desc', icon: '📐' },
-];
-
-export const lookForPoints = [
-  { titleKey: 'hire.remoteFirst.title', descKey: 'hire.remoteFirst.desc', icon: '🏡' },
-  { titleKey: 'hire.asyncComm.title', descKey: 'hire.asyncComm.desc', icon: '📧' },
-  { titleKey: 'hire.fewerMeetings.title', descKey: 'hire.fewerMeetings.desc', icon: '📅' },
-  { titleKey: 'hire.positiveCulture.title', descKey: 'hire.positiveCulture.desc', icon: '☕' },
-  { titleKey: 'hire.dataDecisions.title', descKey: 'hire.dataDecisions.desc', icon: '📊' },
-  { titleKey: 'hire.workLifeBalance.title', descKey: 'hire.workLifeBalance.desc', icon: '🏞️' },
-];
-
 export const snippetsList = [
   {
     id: 'debounce',

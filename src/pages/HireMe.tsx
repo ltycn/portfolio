@@ -1,11 +1,19 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { hireMePoints, lookForPoints } from '../data';
 import { Link } from 'react-router-dom';
+
+interface Point {
+  title: string;
+  desc: string;
+  icon: string;
+}
 
 export default function HireMe() {
   const { t } = useTranslation();
+
+  const hireMePoints = t('hire.hireMePoints', { returnObjects: true }) as Point[];
+  const lookForPoints = t('hire.lookForPoints', { returnObjects: true }) as Point[];
 
   return (
     <div className="min-h-screen pt-32 px-6 max-w-3xl mx-auto mb-32">
@@ -23,14 +31,14 @@ export default function HireMe() {
       <div className="space-y-6 mt-12">
         {hireMePoints.map((point, index) => (
           <motion.p
-            key={point.titleKey}
+            key={index}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
             className="text-white/80 text-lg leading-relaxed"
           >
-            {point.icon} <strong className="text-white">{t(point.titleKey)}.</strong> {t(point.descKey)}
+            {point.icon} <strong className="text-white">{point.title}.</strong> {point.desc}
           </motion.p>
         ))}
       </div>
@@ -42,14 +50,14 @@ export default function HireMe() {
         <div className="space-y-6">
           {lookForPoints.map((point, index) => (
             <motion.p
-              key={point.titleKey}
+              key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="text-white/80 text-lg leading-relaxed"
             >
-              {point.icon} <strong className="text-white">{t(point.titleKey)}.</strong> {t(point.descKey)}
+              {point.icon} <strong className="text-white">{point.title}.</strong> {point.desc}
             </motion.p>
           ))}
         </div>
