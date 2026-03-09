@@ -4,6 +4,7 @@ import './i18n'; // Initialize i18n
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackgroundOrbs from './components/BackgroundOrbs';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -15,6 +16,7 @@ import Resume from './pages/Resume';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="font-sans selection:bg-cyan-500/30 relative z-0">
         <BackgroundOrbs />
         <Navbar />
