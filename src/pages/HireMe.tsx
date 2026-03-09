@@ -60,20 +60,19 @@ export default function HireMe() {
           {t('hire.connect')}
         </h2>
         <p className="text-white/80 text-lg leading-relaxed mb-6">
-          If you're interested in discussing potential opportunities or have any
-          inquiries, I'd love to hear from you. Feel free to reach out via email at{' '}
+          {t('hire.connectDesc')}{' '}
           <a href="mailto:hello@example.com" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
             hello@example.com
           </a>
-          {' '}or connect with me on{' '}
+          {' '}{t('hire.connectOr')}{' '}
           <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
             LinkedIn
           </a>.
         </p>
         <p className="text-white/80 text-lg leading-relaxed">
-          Find more details around my background on the web version of my CV at{' '}
+          {t('hire.cvDetails')}{' '}
           <Link to="/resume" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
-            Resume
+            {t('nav.resume')}
           </Link>.
         </p>
       </div>

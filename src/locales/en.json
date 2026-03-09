@@ -153,7 +153,9 @@
       "desc": "We are all human and have lives outside of work. I believe that work-life balance is important to prevent burnout."
     },
     "connect": "Let's Connect",
-    "connectDesc": "If you're interested in discussing potential opportunities, I'd love to hear from you. Feel free to reach out via email."
+    "connectDesc": "If you're interested in discussing potential opportunities or have any inquiries, I'd love to hear from you. Feel free to reach out via email at",
+    "connectOr": "or connect with me on",
+    "cvDetails": "Find more details around my background on the web version of my CV at"
   },
   "snippets": {
     "title1": "Code",
