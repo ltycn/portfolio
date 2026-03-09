@@ -2,85 +2,80 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { hireMePoints, lookForPoints } from '../data';
+import { Link } from 'react-router-dom';
 
 export default function HireMe() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen pt-32 px-6 max-w-4xl mx-auto mb-32">
-      <div className="text-center mb-16">
-        <span className="text-sm font-bold uppercase tracking-widest text-white/50 mb-4 block">
+    <div className="min-h-screen pt-32 px-6 max-w-3xl mx-auto mb-32">
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
           {t('hire.title1')} {t('hire.title2')}
-        </span>
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
-          {t('hire.subtitle')}
-        </h2>
-        <div className="text-left text-white/70 text-lg leading-relaxed space-y-6 mt-12 max-w-3xl mx-auto">
+        </h1>
+        <div className="text-white/80 text-lg leading-relaxed space-y-6">
+          <p>{t('hire.subtitle')}</p>
           <p>{t('hire.intro')}</p>
           <p>{t('hire.intro2')}</p>
         </div>
       </div>
 
-      <div className="space-y-12 mt-20">
+      <div className="space-y-6 mt-12">
         {hireMePoints.map((point, index) => (
-          <motion.div
+          <motion.p
             key={point.titleKey}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex gap-6 items-start"
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            className="text-white/80 text-lg leading-relaxed"
           >
-            <div className="text-4xl shrink-0 bg-white/5 p-4 rounded-2xl border border-white/10">
-              {point.icon}
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">{t(point.titleKey)}</h3>
-              <p className="text-white/60 text-lg leading-relaxed">{t(point.descKey)}</p>
-            </div>
-          </motion.div>
+            {point.icon} <strong className="text-white">{t(point.titleKey)}.</strong> {t(point.descKey)}
+          </motion.p>
         ))}
       </div>
 
-      <div className="mt-32">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-16 text-center">
+      <div className="mt-20">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
           {t('hire.lookForTitle')}
         </h2>
-        <div className="space-y-12">
+        <div className="space-y-6">
           {lookForPoints.map((point, index) => (
-            <motion.div
+            <motion.p
               key={point.titleKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex gap-6 items-start"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="text-white/80 text-lg leading-relaxed"
             >
-              <div className="text-4xl shrink-0 bg-white/5 p-4 rounded-2xl border border-white/10">
-                {point.icon}
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">{t(point.titleKey)}</h3>
-                <p className="text-white/60 text-lg leading-relaxed">{t(point.descKey)}</p>
-              </div>
-            </motion.div>
+              {point.icon} <strong className="text-white">{t(point.titleKey)}.</strong> {t(point.descKey)}
+            </motion.p>
           ))}
         </div>
       </div>
 
-      <div className="mt-32 glass p-12 rounded-3xl text-center border-t border-white/10">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6">
+      <div className="mt-20">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
           {t('hire.connect')}
         </h2>
-        <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-          {t('hire.connectDesc')}
+        <p className="text-white/80 text-lg leading-relaxed mb-6">
+          If you're interested in discussing potential opportunities or have any
+          inquiries, I'd love to hear from you. Feel free to reach out via email at{' '}
+          <a href="mailto:hello@example.com" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
+            hello@example.com
+          </a>
+          {' '}or connect with me on{' '}
+          <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
+            LinkedIn
+          </a>.
         </p>
-        <a
-          href="mailto:hello@example.com"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform"
-        >
-          hello@example.com
-        </a>
+        <p className="text-white/80 text-lg leading-relaxed">
+          Find more details around my background on the web version of my CV at{' '}
+          <Link to="/resume" className="text-orange-400 hover:text-orange-300 transition-colors underline decoration-white/20 underline-offset-4">
+            Resume
+          </Link>.
+        </p>
       </div>
     </div>
   );
