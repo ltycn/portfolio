@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "About"
+  },
+  "hero": {
+    "title1": "Turning business ideas",
+    "title2": "into scalable",
+    "title3": "digital products",
+    "greeting": "Hey there! I'm Alex Chen 👋",
+    "role": "a Full-Stack Software Engineer",
+    "description1": "Engineering high-performance, accessible, and scalable products",
+    "description2": "for web and mobile ecosystems.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get In Touch",
+    "features": {
+      "performance": "Performance-first",
+      "accessible": "Accessible by design",
+      "scalable": "Scalable systems"
+    }
+  },
+  "projects": {
+    "subtitle": "Featured Case Studies",
+    "title1": "Curated",
+    "title2": "work",
+    "featured": "Featured",
+    "cloudDrive": {
+      "title": "Cloud Drive",
+      "description": "A comprehensive cloud storage platform designed for modern teams, featuring real-time synchronization, granular sharing controls, and blazing-fast upload capabilities."
+    },
+    "messengerPro": {
+      "title": "Messenger Pro",
+      "description": "A modern real-time messaging application built for speed and reliability, featuring typing indicators, read receipts, and seamless group conversations."
+    },
+    "features": {
+      "search": "Advanced search functionality with intelligent filters",
+      "sync": "Real-time synchronization engine",
+      "security": "Enterprise-grade security implementation"
+    }
+  },
+  "skills": {
+    "subtitle": "Core Strengths",
+    "title1": "Competencies",
+    "title2": "skills"
+  },
+  "about": {
+    "subtitle": "About Me",
+    "title1": "Software Engineer with a little bit of",
+    "title2": "everything",
+    "intro": "<0>I'm Alex Chen</0> — a driven Software Engineer with a passion for building engaging and efficient web applications. My toolkit is rooted in the JavaScript ecosystem and Python.",
+    "p1": "When I'm not deep in code, I love to explore new ideas and fulfill my curiosity. I believe in balance and enjoy embracing every aspect of life.",
+    "p2": "I believe each day is a fresh opportunity to grow, create, and make a difference! Every project is a chance to engineer something meaningful.",
+    "workExperience": "Work Experience"
+  },
+  "footer": {
+    "message": "It was great having you here, my inbox is always open whether you have a question, a project in mind, or just want to say hi!",
+    "available": "Available for work",
+    "general": "General",
+    "social": "Social",
+    "snippets": "Snippets",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "github": "Github",
+    "instagram": "Instagram",
+    "copyright": "© 2025 Alex Chen - Software Engineer",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
