@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { skillsList } from '../data';
 
 const Skills = () => {
   const { t } = useTranslation();
+  const skillsList = t('skillsList', { returnObjects: true }) as string[];
 
   return (
     <section id="skills" className="py-20 max-w-7xl mx-auto px-6">

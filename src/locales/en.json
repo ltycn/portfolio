@@ -253,5 +253,123 @@
     "copyright": "© 2025 Alex Chen - Software Engineer",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "navItems": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "About",
+      "path": "/about"
+    },
+    {
+      "name": "Projects",
+      "path": "/projects"
+    },
+    {
+      "name": "Hire Me",
+      "path": "/hire-me"
+    }
+  ],
+  "coreSkills": [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "AWS"
+  ],
+  "heroFeatures": [
+    {
+      "title": "Performance-first",
+      "icon": "Sparkles",
+      "color": "text-cyan-400"
+    },
+    {
+      "title": "Accessible by design",
+      "icon": "Globe",
+      "color": "text-pink-400"
+    },
+    {
+      "title": "Scalable systems",
+      "icon": "Layers",
+      "color": "text-blue-400"
+    }
+  ],
+  "skillsList": [
+    "ReactJS",
+    "NextJS",
+    "Tailwind CSS",
+    "Motion",
+    "NodeJS",
+    "TypeScript",
+    "Python",
+    "ExpressJS",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "Git"
+  ],
+  "snippetsList": [
+    {
+      "id": "debounce",
+      "title": "Debounce Function",
+      "desc": "A simple debounce function to limit the rate at which a function can fire.",
+      "icon": "javascript",
+      "color": "bg-[#F7DF1E]"
+    },
+    {
+      "id": "sitemap",
+      "title": "Dynamic Sitemap",
+      "desc": "Generate a dynamic sitemap for your Next.js application.",
+      "icon": "nextjs",
+      "color": "bg-white"
+    }
+  ],
+  "footerLinks": {
+    "general": [
+      {
+        "name": "Home",
+        "path": "/"
+      },
+      {
+        "name": "About",
+        "path": "/about"
+      },
+      {
+        "name": "Projects",
+        "path": "/projects"
+      }
+    ],
+    "specifics": [
+      {
+        "name": "Hire Me",
+        "path": "/hire-me"
+      },
+      {
+        "name": "Privacy Policy",
+        "path": "/privacy-policy"
+      }
+    ],
+    "social": [
+      {
+        "name": "Twitter",
+        "path": "#"
+      },
+      {
+        "name": "LinkedIn",
+        "path": "#"
+      },
+      {
+        "name": "Github",
+        "path": "#"
+      },
+      {
+        "name": "Instagram",
+        "path": "#"
+      }
+    ]
   }
 }

@@ -1,10 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { footerLinks } from '../data';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const footerLinks = t('footerLinks', { returnObjects: true }) as {
+    general: Array<{ name: string, path: string }>,
+    specifics: Array<{ name: string, path: string }>,
+    social: Array<{ name: string, path: string }>
+  };
 
   return (
     <footer className="py-20 border-t border-white/5 bg-black/50 backdrop-blur-md">
@@ -26,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-4 text-white/60">
               {footerLinks.general.map(item => (
                 <li key={item.path} className="hover:text-white transition-colors cursor-pointer">
-                  <Link to={item.path}>{t(item.nameKey)}</Link>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
@@ -37,7 +41,7 @@ const Footer = () => {
             <ul className="space-y-4 text-white/60">
               {footerLinks.specifics.map(item => (
                 <li key={item.path} className="hover:text-white transition-colors cursor-pointer">
-                  <Link to={item.path}>{t(item.nameKey)}</Link>
+                  <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
@@ -47,8 +51,8 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">{t('footer.social')}</h4>
             <ul className="space-y-4 text-white/60">
               {footerLinks.social.map(item => (
-                <li key={item.nameKey} className="hover:text-white transition-colors cursor-pointer">
-                  <a href={item.path}>{t(item.nameKey)}</a>
+                <li key={item.name} className="hover:text-white transition-colors cursor-pointer">
+                  <a href={item.path}>{item.name}</a>
                 </li>
               ))}
             </ul>

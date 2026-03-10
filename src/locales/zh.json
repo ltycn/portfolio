@@ -253,5 +253,123 @@
     "copyright": "© 2026 Terry Liu - 测试开发工程师",
     "privacy": "隐私政策",
     "terms": "服务条款"
+  },
+  "navItems": [
+    {
+      "name": "首页",
+      "path": "/"
+    },
+    {
+      "name": "关于",
+      "path": "/about"
+    },
+    {
+      "name": "项目",
+      "path": "/projects"
+    },
+    {
+      "name": "雇佣我",
+      "path": "/hire-me"
+    }
+  ],
+  "coreSkills": [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "AWS"
+  ],
+  "heroFeatures": [
+    {
+      "title": "性能优先",
+      "icon": "Sparkles",
+      "color": "text-cyan-400"
+    },
+    {
+      "title": "无障碍设计",
+      "icon": "Globe",
+      "color": "text-pink-400"
+    },
+    {
+      "title": "可扩展架构",
+      "icon": "Layers",
+      "color": "text-blue-400"
+    }
+  ],
+  "skillsList": [
+    "ReactJS",
+    "NextJS",
+    "Tailwind CSS",
+    "Motion",
+    "NodeJS",
+    "TypeScript",
+    "Python",
+    "ExpressJS",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "Git"
+  ],
+  "snippetsList": [
+    {
+      "id": "debounce",
+      "title": "防抖函数 (Debounce)",
+      "desc": "一个简单的防抖函数，用于限制函数的触发频率。",
+      "icon": "javascript",
+      "color": "bg-[#F7DF1E]"
+    },
+    {
+      "id": "sitemap",
+      "title": "动态站点地图",
+      "desc": "为您的 Next.js 应用程序生成动态站点地图。",
+      "icon": "nextjs",
+      "color": "bg-white"
+    }
+  ],
+  "footerLinks": {
+    "general": [
+      {
+        "name": "首页",
+        "path": "/"
+      },
+      {
+        "name": "关于",
+        "path": "/about"
+      },
+      {
+        "name": "项目",
+        "path": "/projects"
+      }
+    ],
+    "specifics": [
+      {
+        "name": "雇佣我",
+        "path": "/hire-me"
+      },
+      {
+        "name": "隐私政策",
+        "path": "/privacy-policy"
+      }
+    ],
+    "social": [
+      {
+        "name": "推特",
+        "path": "#"
+      },
+      {
+        "name": "领英",
+        "path": "#"
+      },
+      {
+        "name": "Github",
+        "path": "#"
+      },
+      {
+        "name": "Instagram",
+        "path": "#"
+      }
+    ]
   }
 }

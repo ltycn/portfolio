@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Sparkles, Globe, Layers } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { coreSkills } from '../data';
 
 const POSSIBILITIES = [
   { part1: 'fficiency', part2: 'ngineer' },
@@ -30,11 +29,8 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const features = [
-    { key: 'hero.features.performance', icon: 'Sparkles', color: 'text-cyan-400' },
-    { key: 'hero.features.accessible', icon: 'Globe', color: 'text-pink-400' },
-    { key: 'hero.features.scalable', icon: 'Layers', color: 'text-blue-400' }
-  ];
+  const coreSkills = t('coreSkills', { returnObjects: true }) as string[];
+  const features = t('heroFeatures', { returnObjects: true }) as Array<{ title: string, icon: string, color: string }>;
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
@@ -145,7 +141,7 @@ const Hero = () => {
             return (
               <div key={idx} className="flex items-center gap-2 glass px-4 py-2 rounded-xl">
                 {IconComponent && <IconComponent size={18} className={feature.color} />}
-                <span className="text-sm text-white/60">{t(feature.key)}</span>
+                <span className="text-sm text-white/60">{feature.title}</span>
               </div>
             );
           })}
