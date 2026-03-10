@@ -3,12 +3,12 @@ import { motion } from 'motion/react';
 import { Menu, Github, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
-import { navItems } from '../data';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navItems = t('navItems', { returnObjects: true }) as Array<{ name: string, path: string }>;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +60,7 @@ const Navbar = () => {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-full shadow-[0_-2px_15px_8px_rgba(255,255,255,0.4)]" />
                   </motion.div>
                 )}
-                <span className="relative z-10">{t(item.nameKey)}</span>
+                <span className="relative z-10">{item.name}</span>
               </NavLink>
             );
           })}

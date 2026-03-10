@@ -13,7 +13,7 @@ It includes a clean architecture, dynamic data extraction, and **multi-language 
 *   🎨 **Tailwind CSS** & **Motion** for beautiful, fluid animations.
 *   🌍 **i18n Multi-Language Support** (`react-i18next`) supporting English and Chinese seamlessly.
 *   🏗️ **Component-Driven Architecture**: Clean, split components for easy maintenance and scaling.
-*   📂 **Data-Driven UI**: All hardcoded text and lists are extracted to a centralized `src/data` directory for quick and painless content updates.
+*   📂 **Data-Driven UI**: All text, lists, and structure (such as navigation items, project details, and core skills) are centralized in the `src/locales/` directory, allowing you to seamlessly update content directly through localized JSON arrays.
 
 ## Getting Started
 
@@ -72,38 +72,39 @@ src/
 │   ├── Hero.tsx        # Introduction banner
 │   ├── Projects.tsx    # Project showcases
 │   ├── Skills.tsx      # Core competencies list
-│   ├── About.tsx       # Personal biography
 │   └── Footer.tsx      # Footer links and info
-├── data/
-│   └── index.ts        # Centralized static data (skills arrays, project info, nav items)
-└── locales/            # Translation Files
-    ├── en.json         # English translations
-    └── zh.json         # Chinese translations
+├── pages/              # Route views
+│   ├── Home.tsx        # Home Page View
+│   ├── About.tsx       # About Page View
+│   ├── Projects.tsx    # Projects Page View
+│   ├── HireMe.tsx      # Hire Me Page View
+│   └── Resume.tsx      # Resume Page View
+└── locales/            # Translation & Data Files
+    ├── en.json         # English content (text & lists)
+    └── zh.json         # Chinese content (text & lists)
 ```
 
 ## How to Customize & Extend
 
-### Modifying Content (Data)
+### Modifying Content & Translations (i18n)
 
-You don't need to dig into React components to change your portfolio content. All lists, featured projects, and core skills are stored in `src/data/index.ts`.
+You don't need to dig into React components to change your portfolio content. All lists, featured projects, core skills, and general text strings are stored inside the locale files.
 
-Simply open `src/data/index.ts` and modify the arrays:
-
-```typescript
-// Example: Adding a new skill
-export const coreSkills = [
-  'TypeScript', 'React', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'GraphQL' // Added GraphQL
-];
-```
-
-### Adding or Updating Translations (i18n)
-
-The project uses `react-i18next`. To change a piece of text (e.g., the Hero title), you only need to update the JSON files.
+The project uses `react-i18next`. To change a piece of text (e.g., the Hero title) or a list item (e.g., Skills list), you only need to update the JSON files (`src/locales/en.json` or `src/locales/zh.json`).
 
 1. Open `src/locales/en.json` (for English) or `src/locales/zh.json` (for Chinese).
-2. Modify the corresponding key:
+2. Modify the corresponding key or array:
 
 ```json
+"coreSkills": [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "PostgreSQL",
+  "AWS",
+  "GraphQL" // Added GraphQL
+],
 "hero": {
   "greeting": "Hello, I am [Your Name] 👋"
 }
@@ -113,8 +114,13 @@ If you add a entirely new section to the site:
 1. Add the text keys to both `en.json` and `zh.json`.
 2. Use the `useTranslation` hook in your component:
    ```tsx
+   import { useTranslation } from 'react-i18next';
+   // ...
    const { t } = useTranslation();
    <h1>{t('newSection.title')}</h1>
+
+   // For retrieving lists:
+   const newList = t('newSection.list', { returnObjects: true }) as string[];
    ```
 
 ### Adding a New Language
