@@ -62,7 +62,7 @@ const Hero = () => {
               </span>
               <motion.div
                 layout
-                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline"
+                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline pr-2 -mr-2"
               >
                 <AnimatePresence mode="popLayout">
                   <motion.span
@@ -71,7 +71,7 @@ const Hero = () => {
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ y: '-100%', opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700"
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700 pr-2 pb-2 -mb-2"
                   >
                     {POSSIBILITIES[index].part1}
                   </motion.span>
@@ -80,7 +80,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Space */}
-            <motion.span layout className="w-[0.2em]" />
+            <motion.span layout className="w-[0.2em] -ml-2" />
 
             {/* Second "e" + rotating part */}
             <motion.div layout className="flex items-baseline">
@@ -89,7 +89,7 @@ const Hero = () => {
               </span>
               <motion.div
                 layout
-                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline"
+                className="relative h-[1.2em] overflow-hidden inline-flex items-baseline pr-2 -mr-2"
               >
                 <AnimatePresence mode="popLayout">
                   <motion.span
@@ -98,7 +98,7 @@ const Hero = () => {
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ y: '-100%', opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
-                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700"
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-orange-400 via-red-500 to-rose-600 block whitespace-nowrap transition-all duration-700 pr-2 pb-2 -mb-2"
                   >
                     {POSSIBILITIES[index].part2}
                   </motion.span>
